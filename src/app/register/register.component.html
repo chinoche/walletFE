@@ -1,0 +1,28 @@
+<div class="register">
+  <div class="register-left-panel"></div>
+  <div class="register-right-panel">
+    <div class="register-form">
+      <mat-card style="height: 100%">
+        <h1>Bienvenido</h1>
+        <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+          <mat-input-container class="register-form-fullWidth">
+            <input matInput type="email" placeholder="Email" name="email" [(ngModel)]="model.email" #email="ngModel" required>
+          </mat-input-container>
+          <mat-input-container class="register-form-fullWidth">
+            <input type="text" matInput placeholder="Nombre de usuario" name="username" [(ngModel)]="model.username" #username="ngModel" required>
+          </mat-input-container>
+          <mat-input-container class="register-form-fullWidth">
+            <input (keyup.enter)="register()" type="password" matInput placeholder="Contraseña" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+          </mat-input-container>
+          <mat-input-container class="register-form-fullWidth">
+            <input type="password" matInput placeholder="Verificar Contraseña" name="password_confirmation" appCompare="password"
+                   [(ngModel)]="model.password_confirmation" #password_confirmation="ngModel" required>
+          </mat-input-container>
+        </form>
+        <div>
+          <button mat-raised-button color="primary" (click)="register(model)">Registrar</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

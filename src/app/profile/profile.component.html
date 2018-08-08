@@ -1,0 +1,20 @@
+<div>
+  <mat-card class="example-card" *ngIf="userInfo">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ userInfo.userName }}</mat-card-title>
+      <mat-card-subtitle>{{ userInfo.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image >
+    <mat-card-content>
+      <p>
+        Your current balance is: {{ userInfo.balance | currency }}
+      </p>
+      <input pattern="[a-zA-Z ]*" ngModel>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Add Funds</button>
+      <button mat-button>Transfer to Card</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

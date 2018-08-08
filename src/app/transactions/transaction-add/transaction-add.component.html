@@ -1,0 +1,21 @@
+<mat-card>
+  <form (submit)="transfer(transaction)">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Amount to transfer" [(ngModel)]="transaction.transferred" type="text" name="transferred" (input)="onTransferChange(transaction)" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Account number to transfer" [(ngModel)]="transaction.destination" type="text" name="destination" required>
+      </mat-form-field>
+      <div>
+        <span>Comission:{{ transaction.comission }}</span>
+        <span>Rate: {{ transaction.rate }}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button>Transafer</button>
+      <button type="button" mat-button (click)="close()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+
